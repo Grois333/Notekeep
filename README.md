@@ -21,9 +21,11 @@ samples, guidance on mobile development, and a full API reference.
 Running Flutter on Device or Emulator:
 `flutter run`
 
-`r` Hot Reload
+Hot Reload
+`r`
 
-`R` Hot Restart
+Hot Restart
+`R`
 
 Add or Change Widgets:
 `Ctrl + .`
