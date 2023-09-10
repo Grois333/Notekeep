@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1076020429526",
+    "project_id": "notekeep-flutter-project",
+    "storage_bucket": "notekeep-flutter-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076020429526:android:1d7e6f5b3a86115e297f77",
+        "android_client_info": {
+          "package_name": "com.example.notekeep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076020429526-8tl0i6ra6rga0sv5qdsqtdtrhotki7gh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7qRACaGumlAZP177dvl347VNt_nkQP_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076020429526-8tl0i6ra6rga0sv5qdsqtdtrhotki7gh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
