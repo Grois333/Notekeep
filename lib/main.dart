@@ -48,15 +48,7 @@ class HomePage extends StatelessWidget {
               return const LoginView();
             } 
             return const Text('Done');
-            // print(user);
-            // if(user?.emailVerified ?? false){
-            //   //print('You are a verified user');
-            // } else{
-            //   //print('You need to verify your email first');
-            //   return const VerifyEmailView();
-            // }
-            // return const Text('Done!');
-            default:
+          default:
             return const CircularProgressIndicator();
         }
       },
@@ -64,3 +56,16 @@ class HomePage extends StatelessWidget {
   }
 }
 
+class NotesView extends StatefulWidget {
+  const NotesView({ Key? key }) : super(key: key);
+
+  @override
+  State<NotesView> createState() => _NotesViewState();
+}
+
+class _NotesViewState extends State<NotesView> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
