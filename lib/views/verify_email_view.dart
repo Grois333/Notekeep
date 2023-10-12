@@ -27,11 +27,11 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
           ),
           TextButton(
            onPressed: () async {
-            final user = FirebaseAuth.instance.currentUser;
-            // Check if a user is signed in before attempting to delete
-            if (user != null) {
-              await user.delete(); //delete user to start again
-            }
+            // final user = FirebaseAuth.instance.currentUser;
+            // // Check if a user is signed in before attempting to delete
+            // if (user != null) {
+            //   await user.delete(); //delete user to start again
+            // }
             await FirebaseAuth.instance.signOut();
             Navigator.of(context).pushNamedAndRemoveUntil(registerRoute, (route) => false,);
            }, 
