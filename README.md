@@ -41,3 +41,9 @@ Declare Stateless Widgtet:
 
 Declare Statefull Widget:
 `stf`
+
+Test Dependency
+`flutter pub add test --dev`
+
+Run Tests
+`flutter test test/auth_test.dart`
