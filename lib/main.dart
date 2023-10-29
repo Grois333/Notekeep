@@ -5,6 +5,7 @@ import 'package:notekeep/constants/routes.dart';
 //import 'package:notekeep/firebase_options.dart';
 import 'package:notekeep/services/auth/auth_service.dart';
 import 'package:notekeep/views/login_view.dart';
+import 'package:notekeep/views/notes/new_note_view.dart';
 import 'package:notekeep/views/notes/notes_view.dart';
 import 'package:notekeep/views/register_view.dart';
 import 'package:notekeep/views/verify_email_view.dart';
@@ -25,6 +26,7 @@ void main() {
         registerRoute: (context) => const RegisterView(),
         notesRoute: (context) => const NotesView(),
         verifyEmailRoute: (context) => const VerifyEmailView(),
+        newNoteRoute: (context) => const NewNoteView(),
       },
     ),);
 }
