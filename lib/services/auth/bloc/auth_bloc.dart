@@ -6,6 +6,7 @@ import 'package:notekeep/services/auth/bloc/auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(AuthProvider provider)
       : super(const AuthStateUninitialized(isLoading: true)) {
+        
     on<AuthEventShouldRegister>((event, emit) {
       emit(const AuthStateRegistering(
         exception: null,
