@@ -47,3 +47,11 @@ Test Dependency
 
 Run Tests
 `flutter test test/auth_test.dart`
+
+Generate Icons
+`flutter pub run flutter_launcher_icons:main`
+
+After a major change in the app, make a clean
+`flutter clean`
+`flutter pub get`
+`flutter run`
