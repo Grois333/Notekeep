@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:notekeep/constants/routes.dart';
 //import 'package:notekeep/firebase_options.dart';
-import 'package:notekeep/services/auth/auth_service.dart';
+//import 'package:notekeep/services/auth/auth_service.dart';
 import 'package:notekeep/services/auth/bloc/auth_event.dart';
 import 'package:notekeep/services/auth/bloc/auth_state.dart';
 import 'package:notekeep/services/auth/firebase_auth_provider.dart';
@@ -17,6 +17,7 @@ import 'package:notekeep/views/register_view.dart';
 import 'package:notekeep/views/verify_email_view.dart';
 import 'dart:developer' as devtools show log;
 import 'package:notekeep/helpers/loading/loading_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'services/auth/bloc/auth_bloc.dart';
 //import 'enums/menu_action.dart';
@@ -25,6 +26,8 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MaterialApp(
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

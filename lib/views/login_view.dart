@@ -2,11 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notekeep/services/auth/auth_exceptions.dart';
-import 'package:notekeep/utilities/dialogs/loading_dialog.dart';
+//import 'package:notekeep/utilities/dialogs/loading_dialog.dart';
 //import 'package:notekeep/services/auth/auth_service.dart';
 //import 'dart:developer' as devtools show log;
+import 'package:notekeep/extensions/buildcontext/loc.dart';
 
-import '../constants/routes.dart';
+//import '../constants/routes.dart';
 import '../services/auth/bloc/auth_bloc.dart';
 import '../services/auth/bloc/auth_event.dart';
 import '../services/auth/bloc/auth_state.dart';
@@ -72,7 +73,7 @@ class _LoginViewState extends State<LoginView> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Login'),
+          title: Text(context.loc.login),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
