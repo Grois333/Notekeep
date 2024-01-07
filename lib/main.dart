@@ -1,9 +1,10 @@
 // import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_core/firebase_core.dart';
-import 'package:bloc/bloc.dart';
+//import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:notekeep/constants/routes.dart';
+import 'package:notekeep/extensions/buildcontext/loc.dart';
 //import 'package:notekeep/firebase_options.dart';
 //import 'package:notekeep/services/auth/auth_service.dart';
 import 'package:notekeep/services/auth/bloc/auth_event.dart';
@@ -15,7 +16,7 @@ import 'package:notekeep/views/notes/create_update_note_view.dart';
 import 'package:notekeep/views/notes/notes_view.dart';
 import 'package:notekeep/views/register_view.dart';
 import 'package:notekeep/views/verify_email_view.dart';
-import 'dart:developer' as devtools show log;
+//import 'dart:developer' as devtools show log;
 import 'package:notekeep/helpers/loading/loading_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -60,7 +61,8 @@ class HomePage extends StatelessWidget {
         if (state.isLoading) {
           LoadingScreen().show(
             context: context,
-            text: state.loadingText ?? 'Please wait a moment',
+            //text: state.loadingText ?? 'Please wait a moment',
+            text: state.loadingText ?? context.loc.please_wait,
           );
         } else {
           LoadingScreen().hide();

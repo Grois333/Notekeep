@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:notekeep/services/auth/auth_provider.dart';
 import 'package:notekeep/services/auth/bloc/auth_event.dart';
 import 'package:notekeep/services/auth/bloc/auth_state.dart';
+import 'package:notekeep/extensions/buildcontext/loc.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(AuthProvider provider)
@@ -98,10 +99,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     // log in
     on<AuthEventLogIn>((event, emit) async {
       emit(
-        const AuthStateLoggedOut(
+        AuthStateLoggedOut(
           exception: null,
           isLoading: true,
-          loadingText: 'Please wait while I log you in',
+          //loadingText: 'Please wait while I log you in',
+          loadingText: event.context.loc.please_wait_login,
         ),
       );
       final email = event.email;

@@ -1,11 +1,12 @@
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notekeep/extensions/buildcontext/loc.dart';
 //import 'dart:developer' as devtools show log;
 
-import 'package:notekeep/constants/routes.dart';
+//import 'package:notekeep/constants/routes.dart';
 import 'package:notekeep/services/auth/auth_exceptions.dart';
-import 'package:notekeep/services/auth/auth_service.dart';
+//import 'package:notekeep/services/auth/auth_service.dart';
 
 import '../services/auth/bloc/auth_bloc.dart';
 import '../services/auth/bloc/auth_event.dart';
@@ -45,47 +46,52 @@ class _RegisterViewState extends State<RegisterView> {
           if (state.exception is WeakPasswordAuthException) {
             await showErrorDialog(
               context,
-              'Weak password'
-              //context.loc.register_error_weak_password,
+              //'Weak password'
+              context.loc.register_error_weak_password,
             );
           } else if (state.exception is EmailAlreadyInUseAuthException) {
             await showErrorDialog(
               context,
-              'Email is already in use'
-              //context.loc.register_error_email_already_in_use,
+              //'Email is already in use'
+              context.loc.register_error_email_already_in_use,
             );
           } else if (state.exception is GenericAuthException) {
             await showErrorDialog(
               context,
-              'Failed to register'
-              //context.loc.register_error_generic,
+              //'Failed to register'
+              context.loc.register_error_generic,
             );
           } else if (state.exception is InvalidEmailAuthException) {
             await showErrorDialog(
               context,
-              'Invalid email'
-              //context.loc.register_error_invalid_email,
+              //'Invalid email'
+              context.loc.register_error_invalid_email,
             );
           }
         }
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Register'),
+          title: Text(context.loc.register),
+          //title: const Text('Register'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('Enter your email and password to create your notes!'),
+              //const Text('Enter your email and password to create your notes!'),
+              Text(context.loc.register_view_prompt),
               TextField(
                 controller: _email,
                 enableSuggestions: false,
                 autocorrect: false,
                 autofocus: true,
                 keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(hintText: 'Enter your email'),
+                decoration: InputDecoration(
+                  //hintText: 'Enter your email'
+                  hintText: context.loc.email_text_field_placeholder,
+                ),
               ),
               TextField(
                 controller: _password,
@@ -93,7 +99,10 @@ class _RegisterViewState extends State<RegisterView> {
                 enableSuggestions: false,
                 autocorrect: false,
                 decoration:
-                    const InputDecoration(hintText: 'Enter your password'),
+                    InputDecoration(
+                      //hintText: 'Enter your password'
+                      hintText: context.loc.password_text_field_placeholder,
+                    ),
               ),
               Center(
                 child: Column(
@@ -148,7 +157,10 @@ class _RegisterViewState extends State<RegisterView> {
                         // // }
 
                       },
-                      child: const Text('Register'),
+                      //child: const Text('Register'),
+                      child: Text(
+                          context.loc.register,
+                      ),
                     ),
 
                     TextButton(
@@ -164,7 +176,10 @@ class _RegisterViewState extends State<RegisterView> {
                         // );
 
                       },
-                      child: const Text('Already registered? Login here!')
+                      //child: const Text('Already registered? Login here!')
+                      child: Text(
+                          context.loc.register_view_already_registered,
+                      ),
                     )
 
                   ],

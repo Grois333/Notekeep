@@ -1,18 +1,21 @@
 {
 
     "logout_button": "Cerrar sesión",
-    "note": "Antäckning",
+    "note": "Nota",
     "cancel": "Cancelar",
     "yes": "Si",
-    "delete": "Radera",
+    "delete": "Eliminar",
     "sharing": "Compartir",
     "ok": "OK",
     "login": "Iniciar sesión",
-    "verify_email": "Verifera",
-    "register": "Registrera",
-    "restart": "Börja om",
+    "verify_email": "Verificar email",
+    "register": "Registrar",
+    "restart": "Reanudar",
 
-    "start_typing_your_note": "Skriv din antäckning här",
+    "please_wait":"Por favor, espere un momento",
+    "please_wait_login":"Espere mientras inicia sesión.",
+
+    "start_typing_your_note": "Comienza a escribir tu nota",
     "delete_note_prompt": "¿Estás seguro que quieres eliminar esta nota?",
     "cannot_share_empty_note_prompt": "No puedes compartir una nota vacía!",
     "generic_error_prompt": "Ocurrió un error",
@@ -21,17 +24,17 @@
     "password_reset": "Restablecer contraseña",
     "password_reset_dialog_prompt": "Ahora le hemos enviado un enlace para restablecer su contraseña. Por favor revisa tu correo electrónico para más información.",
 
-    "login_error_cannot_find_user": "Kunde inte hitta en användare med de angivna uppgifter!",
-    "login_error_wrong_credentials": "Fel inloggnings uppgifter!",
-    "login_error_auth_error": "Ett autentiseringsfel har inträffats!",
+    "login_error_cannot_find_user": "No se puede encontrar un usuario con las credenciales ingresadas!",
+    "login_error_wrong_credentials": "Credenciales incorrectas",
+    "login_error_auth_error": "Error de autenticación",
 
-    "login_view_prompt": "Logga in för att kunna se dina antäckningar!",
+    "login_view_prompt": "Inicie sesión en su cuenta para interactuar y crear notas!",
     
-    "login_view_forgot_password": "Glömt lösenord?",
-    "login_view_not_registered_yet": "Har inte registrerar än? Tryck här!",
+    "login_view_forgot_password": "Olvidé mi contraseña",
+    "login_view_not_registered_yet": "No estas registrado? Registrate aquí!",
 
-    "email_text_field_placeholder": "Su correo electrónico aquí",
-    "password_text_field_placeholder": "Skriv ditt lösenord här",
+    "email_text_field_placeholder": "Ingrese su email aquí",
+    "password_text_field_placeholder": "Ingrese su contraseña aquí",
     
     "forgot_password": "Olvidé contraseña",
     "forgot_password_view_generic_error": "No pudimos procesar su solicitud. Asegúrese de ser un usuario registrado o, si no, regístrece ahora retrocediendo un paso.",
@@ -39,22 +42,22 @@
     "forgot_password_view_send_me_link": "Envíar enlace para restablecer contraseña",
     "forgot_password_view_back_to_login": "Volver a inicio de sesión",
 
-    "register_error_weak_password": "Ditt valda lösenord är inte säkert nog. Var vänlig och välj ett annat lösenord!",
-    "register_error_email_already_in_use": "Mejladdresset som du angav är redan taget. Var vänlig och välj ett annat mejladdress!",
-    "register_error_generic": "Kunde tyvärr inte hantera din begäran. Var vänlig försök igen senare.",
-    "register_error_invalid_email": "Ditt valda mejladdress verkar inte vara giltigt. Var vänlig försök med ett annat mejladdress.",
-    "register_view_prompt": "Mata in ditt mejladdress och ditt lösenord för att se dina antäckningar!",
-    "register_view_already_registered": "Redan registrerat? Logga in här!",
+    "register_error_weak_password": "Ésta contraseña no es lo suficientemente segura. Elija otra contraseña!",
+    "register_error_email_already_in_use": "Éste correo electrónico ya está registrado para otro usuario. Elija otro email!",
+    "register_error_generic": "Fallo en el registro. Por favor, inténtelo de nuevo más tarde!",
+    "register_error_invalid_email": "La dirección de correo electrónico que ingresó parece no ser válida. Pruebe con otra dirección de correo electrónico!",
+    "register_view_prompt": "Ingresa tu correo electrónico y contraseña para ver tus notas!",
+    "register_view_already_registered": "Ya estás registrado? Entra aquí!",
 
-    "verify_email_view_prompt": "Vi har skickat ett mejl till ditt mejladdress. Du behöver trycka på länken i mejlet för att verifiera ditt mejladdress. Om du inte har redan fått mejlet efter en stund, tryck på knappen nedan för att skicka ett till mejl!",
-    "verify_email_send_email_verification": "Skicka verifieringsmejlet igen",
+    "verify_email_view_prompt": "Le hemos enviado una verificación por correo electrónico. Ábralo para verificar su cuenta. Si aún no ha recibido un correo electrónico de verificación, presione el botón a continuación.",
+    "verify_email_send_email_verification": "Enviar verificación por email",
 
-    "notes_title": "{count, plural, =0{Inga antäckningar än} =1{1 antäckning} other{{count} antäckningar}}",
+    "notes_title": "{count, plural, =0{Aún no hay notas} =1{1 nota} other{{count} notas}}",
     "@notes_title": {
         "placeholders": {
             "count": {
                 "type": "int",
-                "example": "3 antäckningar"
+                "example": "3 notas"
             }
         }
     }

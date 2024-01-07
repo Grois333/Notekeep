@@ -57,17 +57,23 @@ class _LoginViewState extends State<LoginView> {
           // }
 
           if (state.exception is UserNotFoundAuthException) {
-            await showErrorDialog(context, 'Cannot find a user with the entered credentials!'
-                //context.loc.login_error_cannot_find_user,
-                );
+            await showErrorDialog(
+              //context, 'Cannot find a user with the entered credentials!'
+              context,
+              context.loc.login_error_cannot_find_user,
+            );
           } else if (state.exception is WrongPasswordAuthException) {
-            await showErrorDialog(context, 'Wrong credentials'
-                //context.loc.login_error_wrong_credentials,
-                );
+              await showErrorDialog(
+                  //context, 'Wrong credentials'
+                  context,
+                  context.loc.login_error_wrong_credentials,
+              );
           } else if (state.exception is GenericAuthException) {
-            await showErrorDialog(context, 'Authentication error'
-                //context.loc.login_error_auth_error,
-                );
+              await showErrorDialog(
+                //context, 'Authentication error'
+                context,
+                context.loc.login_error_auth_error,
+              );
           }
         }
       },
@@ -79,13 +85,17 @@ class _LoginViewState extends State<LoginView> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              const Text('Please log in to your account in order to interact with your notes!'),
+              //const Text('Please log in to your account in order to interact with your notes!'),
+              Text(context.loc.login_view_prompt),
               TextField(
                 controller: _email,
                 enableSuggestions: false,
                 autocorrect: false,
                 keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(hintText: 'Enter your email'),
+                decoration: InputDecoration(
+                  //hintText: 'Enter your email'
+                  hintText: context.loc.email_text_field_placeholder,
+                ),
               ),
               TextField(
                 controller: _password,
@@ -93,7 +103,10 @@ class _LoginViewState extends State<LoginView> {
                 enableSuggestions: false,
                 autocorrect: false,
                 decoration:
-                    const InputDecoration(hintText: 'Enter your password'),
+                    InputDecoration(
+                      //hintText: 'Enter your password'
+                      hintText: context.loc.password_text_field_placeholder,
+                    ),
               ),
               
               // BlocListener<AuthBloc, AuthState>(
@@ -166,10 +179,12 @@ class _LoginViewState extends State<LoginView> {
                         AuthEventLogIn(
                           email,
                           password,
+                          context,
                         ),
                       );
                 },
-                 child: const Text('Login'),
+                  child: Text(context.loc.login),
+                 //child: const Text('Login'),
               ),
 
 
@@ -179,9 +194,9 @@ class _LoginViewState extends State<LoginView> {
                             const AuthEventForgotPassword(),
                           );
                     },
-                    child: const Text(
-                      'I forgot my password'
-                      //context.loc.login_view_forgot_password,
+                    child: Text(
+                      //'I forgot my password'
+                      context.loc.login_view_forgot_password,
                     ),
                   ),
 
@@ -198,7 +213,11 @@ class _LoginViewState extends State<LoginView> {
                     //   (route) => false,
                     // );
                   },
-                  child: const Text('Not registered yet? Register here!'))
+                  child: Text(
+                    context.loc.login_view_not_registered_yet,
+                    //'Not registered yet? Register here!'
+                  )
+                )
             ],
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart' show immutable;
 import 'package:notekeep/services/auth/auth_user.dart';
 import 'package:equatable/equatable.dart';
+//import 'package:notekeep/extensions/buildcontext/loc.dart';
 
 @immutable
 abstract class AuthState {
@@ -9,6 +10,7 @@ abstract class AuthState {
   const AuthState({
     required this.isLoading,
     this.loadingText = 'Please wait a moment',
+    //this.loadingText = context.loc.please_wait,
   });
 }
 

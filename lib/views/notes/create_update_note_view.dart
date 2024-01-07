@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notekeep/extensions/buildcontext/loc.dart';
 import 'package:notekeep/services/auth/auth_service.dart';
 //import 'package:notekeep/services/crud/notes_service.dart';
 import 'package:notekeep/utilities/generics/get_arguments.dart';
@@ -102,7 +103,10 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('New Note',),
+        title: Text(
+          context.loc.note,
+        ),
+        //title: const Text('New Note',),
         actions: [
           IconButton(
             onPressed: () async {
@@ -128,9 +132,9 @@ class _CreateUpdateNoteViewState extends State<CreateUpdateNoteView> {
                 controller: _textController,
                 keyboardType: TextInputType.multiline,
                 maxLines: null,
-                decoration: const InputDecoration(
-                  //hintText: context.loc.start_typing_your_note,
-                  hintText: 'Start typing your note...',
+                decoration: InputDecoration(
+                  hintText: context.loc.start_typing_your_note,
+                  //hintText: 'Start typing your note...',
                 ),
               );
             default:
