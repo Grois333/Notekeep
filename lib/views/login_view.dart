@@ -83,142 +83,144 @@ class _LoginViewState extends State<LoginView> {
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              //const Text('Please log in to your account in order to interact with your notes!'),
-              Text(context.loc.login_view_prompt),
-              TextField(
-                controller: _email,
-                enableSuggestions: false,
-                autocorrect: false,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  //hintText: 'Enter your email'
-                  hintText: context.loc.email_text_field_placeholder,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                //const Text('Please log in to your account in order to interact with your notes!'),
+                Text(context.loc.login_view_prompt),
+                TextField(
+                  controller: _email,
+                  enableSuggestions: false,
+                  autocorrect: false,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    //hintText: 'Enter your email'
+                    hintText: context.loc.email_text_field_placeholder,
+                  ),
                 ),
-              ),
-              TextField(
-                controller: _password,
-                obscureText: true,
-                enableSuggestions: false,
-                autocorrect: false,
-                decoration:
-                    InputDecoration(
-                      //hintText: 'Enter your password'
-                      hintText: context.loc.password_text_field_placeholder,
+                TextField(
+                  controller: _password,
+                  obscureText: true,
+                  enableSuggestions: false,
+                  autocorrect: false,
+                  decoration:
+                      InputDecoration(
+                        //hintText: 'Enter your password'
+                        hintText: context.loc.password_text_field_placeholder,
+                      ),
+                ),
+                
+                // BlocListener<AuthBloc, AuthState>(
+                //   listener: (context, state) async {
+                    
+                //   },
+                //   child: TextButton(
+                //     onPressed: () async {
+                //       final email = _email.text;
+                //       final password = _password.text;
+                //       context.read<AuthBloc>().add(
+                //             AuthEventLogIn(
+                //               email,
+                //               password,
+                //             ),
+                //           );
+                //       // try {
+                //       //   context.read<AuthBloc>().add(
+                //       //         AuthEventLogIn(
+                //       //           email,
+                //       //           password,
+                //       //         ),
+                //       //       );
+          
+                //       //   // await AuthService.firebase().logIn(email: email, password: password);
+                //       //   // //final userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+                //       //   // final user = AuthService.firebase().currentUser;
+                //       //   // //if user is verified
+                //       //   // if(user?.isEmailVerified ?? false){
+                //       //   //   Navigator.of(context).pushNamedAndRemoveUntil(notesRoute, (route) => false,);
+                //       //   //   //devtools.log(userCredential.toString());
+                //       //   //   //print(userCredential);
+                //       //   // }else{
+                //       //   //   Navigator.of(context).pushNamedAndRemoveUntil(verifyEmailRoute, (route) => false,);
+                //       //   //   //devtools.log(userCredential.toString());
+                //       //   // }
+          
+                //       // } on UserNotFoundAuthException {
+                //       //   await showErrorDialog(
+                //       //     context,
+                //       //     'User not found',
+                //       //   );
+                //       // } on WrongPasswordAuthException {
+                //       //   await showErrorDialog(
+                //       //     context,
+                //       //     'Wrong credentials',
+                //       //   );
+                //       // } on GenericAuthException {
+                //       //   await showErrorDialog(
+                //       //     context,
+                //       //     'Authentication Error',
+                //       //   );
+                //       // }
+                //       // catch (e){
+                //       //   //print('Something bad happened');
+                //       //   //print(e);
+                //       //   //print(e.runtimeType);
+                //       //   //await showErrorDialog(context, e.toString(),);
+                //       // }
+                //     },
+                //     child: const Text('Login'),
+                //   ),
+                // ),
+          
+                TextButton(
+                  onPressed: () async {
+                    final email = _email.text;
+                    final password = _password.text;
+                    context.read<AuthBloc>().add(
+                          AuthEventLogIn(
+                            email,
+                            password,
+                            context,
+                          ),
+                        );
+                  },
+                    child: Text(context.loc.login),
+                   //child: const Text('Login'),
+                ),
+          
+          
+                TextButton(
+                      onPressed: () {
+                        context.read<AuthBloc>().add(
+                              const AuthEventForgotPassword(),
+                            );
+                      },
+                      child: Text(
+                        //'I forgot my password'
+                        context.loc.login_view_forgot_password,
+                      ),
                     ),
-              ),
-              
-              // BlocListener<AuthBloc, AuthState>(
-              //   listener: (context, state) async {
-                  
-              //   },
-              //   child: TextButton(
-              //     onPressed: () async {
-              //       final email = _email.text;
-              //       final password = _password.text;
-              //       context.read<AuthBloc>().add(
-              //             AuthEventLogIn(
-              //               email,
-              //               password,
-              //             ),
-              //           );
-              //       // try {
-              //       //   context.read<AuthBloc>().add(
-              //       //         AuthEventLogIn(
-              //       //           email,
-              //       //           password,
-              //       //         ),
-              //       //       );
-
-              //       //   // await AuthService.firebase().logIn(email: email, password: password);
-              //       //   // //final userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
-              //       //   // final user = AuthService.firebase().currentUser;
-              //       //   // //if user is verified
-              //       //   // if(user?.isEmailVerified ?? false){
-              //       //   //   Navigator.of(context).pushNamedAndRemoveUntil(notesRoute, (route) => false,);
-              //       //   //   //devtools.log(userCredential.toString());
-              //       //   //   //print(userCredential);
-              //       //   // }else{
-              //       //   //   Navigator.of(context).pushNamedAndRemoveUntil(verifyEmailRoute, (route) => false,);
-              //       //   //   //devtools.log(userCredential.toString());
-              //       //   // }
-
-              //       // } on UserNotFoundAuthException {
-              //       //   await showErrorDialog(
-              //       //     context,
-              //       //     'User not found',
-              //       //   );
-              //       // } on WrongPasswordAuthException {
-              //       //   await showErrorDialog(
-              //       //     context,
-              //       //     'Wrong credentials',
-              //       //   );
-              //       // } on GenericAuthException {
-              //       //   await showErrorDialog(
-              //       //     context,
-              //       //     'Authentication Error',
-              //       //   );
-              //       // }
-              //       // catch (e){
-              //       //   //print('Something bad happened');
-              //       //   //print(e);
-              //       //   //print(e.runtimeType);
-              //       //   //await showErrorDialog(context, e.toString(),);
-              //       // }
-              //     },
-              //     child: const Text('Login'),
-              //   ),
-              // ),
-
-              TextButton(
-                onPressed: () async {
-                  final email = _email.text;
-                  final password = _password.text;
-                  context.read<AuthBloc>().add(
-                        AuthEventLogIn(
-                          email,
-                          password,
-                          context,
-                        ),
-                      );
-                },
-                  child: Text(context.loc.login),
-                 //child: const Text('Login'),
-              ),
-
-
-              TextButton(
+          
+                
+                TextButton(
                     onPressed: () {
+          
                       context.read<AuthBloc>().add(
-                            const AuthEventForgotPassword(),
-                          );
+                        const AuthEventShouldRegister(),
+                      );
+          
+                      // Navigator.of(context).pushNamedAndRemoveUntil(
+                      //   registerRoute,
+                      //   (route) => false,
+                      // );
                     },
                     child: Text(
-                      //'I forgot my password'
-                      context.loc.login_view_forgot_password,
-                    ),
-                  ),
-
-              
-              TextButton(
-                  onPressed: () {
-
-                    context.read<AuthBloc>().add(
-                      const AuthEventShouldRegister(),
-                    );
-
-                    // Navigator.of(context).pushNamedAndRemoveUntil(
-                    //   registerRoute,
-                    //   (route) => false,
-                    // );
-                  },
-                  child: Text(
-                    context.loc.login_view_not_registered_yet,
-                    //'Not registered yet? Register here!'
+                      context.loc.login_view_not_registered_yet,
+                      //'Not registered yet? Register here!'
+                    )
                   )
-                )
-            ],
+              ],
+            ),
           ),
         ),
       ),

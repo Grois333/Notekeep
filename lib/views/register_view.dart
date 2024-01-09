@@ -77,117 +77,119 @@ class _RegisterViewState extends State<RegisterView> {
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //const Text('Enter your email and password to create your notes!'),
-              Text(context.loc.register_view_prompt),
-              TextField(
-                controller: _email,
-                enableSuggestions: false,
-                autocorrect: false,
-                autofocus: true,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  //hintText: 'Enter your email'
-                  hintText: context.loc.email_text_field_placeholder,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //const Text('Enter your email and password to create your notes!'),
+                Text(context.loc.register_view_prompt),
+                TextField(
+                  controller: _email,
+                  enableSuggestions: false,
+                  autocorrect: false,
+                  autofocus: true,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    //hintText: 'Enter your email'
+                    hintText: context.loc.email_text_field_placeholder,
+                  ),
                 ),
-              ),
-              TextField(
-                controller: _password,
-                obscureText: true,
-                enableSuggestions: false,
-                autocorrect: false,
-                decoration:
-                    InputDecoration(
-                      //hintText: 'Enter your password'
-                      hintText: context.loc.password_text_field_placeholder,
-                    ),
-              ),
-              Center(
-                child: Column(
-                  children: [
-                    TextButton(
-                      onPressed: () async {
-                        final email = _email.text;
-                        final password = _password.text;
-                         context.read<AuthBloc>().add(
-                            AuthEventRegister(
-                              email,
-                              password,
-                            ),
+                TextField(
+                  controller: _password,
+                  obscureText: true,
+                  enableSuggestions: false,
+                  autocorrect: false,
+                  decoration:
+                      InputDecoration(
+                        //hintText: 'Enter your password'
+                        hintText: context.loc.password_text_field_placeholder,
+                      ),
+                ),
+                Center(
+                  child: Column(
+                    children: [
+                      TextButton(
+                        onPressed: () async {
+                          final email = _email.text;
+                          final password = _password.text;
+                           context.read<AuthBloc>().add(
+                              AuthEventRegister(
+                                email,
+                                password,
+                              ),
+                            );
+          
+                          // try {
+                          //   //final userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
+                          //   //devtools.log(userCredential.toString());
+          
+                          //   await AuthService.firebase()
+                          //       .createUser(email: email, password: password);
+          
+                          //   //final user = FirebaseAuth.instance.currentUser;
+                          //   //await user?.sendEmailVerification();
+          
+                          //   AuthService.firebase().sendEmailVerification();
+                          //   Navigator.of(context).pushNamed(verifyEmailRoute);
+                          //   //print(userCredential);
+                          // } on WeakPasswordAuthException {
+                          //   await showErrorDialog(
+                          //     context,
+                          //     'Weak Password',
+                          //   );
+                          // } on EmailAlreadyInUseAuthException {
+                          //   await showErrorDialog(
+                          //     context,
+                          //     'Email is already in use',
+                          //   );
+                          // } on InvalidEmailAuthException {
+                          //   await showErrorDialog(
+                          //     context,
+                          //     'Email is invalid',
+                          //   );
+                          // } on GenericAuthException {
+                          //   await showErrorDialog(
+                          //     context,
+                          //     'Failed To Register',
+                          //   );
+                          // }
+                          // // catch (e){
+                          // //   await showErrorDialog(context, e.toString(),);
+                          // // }
+          
+                        },
+                        //child: const Text('Register'),
+                        child: Text(
+                            context.loc.register,
+                        ),
+                      ),
+          
+                      TextButton(
+                        onPressed: () {
+          
+                          context.read<AuthBloc>().add(
+                            const AuthEventLogOut(),
                           );
-
-                        // try {
-                        //   //final userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password);
-                        //   //devtools.log(userCredential.toString());
-
-                        //   await AuthService.firebase()
-                        //       .createUser(email: email, password: password);
-
-                        //   //final user = FirebaseAuth.instance.currentUser;
-                        //   //await user?.sendEmailVerification();
-
-                        //   AuthService.firebase().sendEmailVerification();
-                        //   Navigator.of(context).pushNamed(verifyEmailRoute);
-                        //   //print(userCredential);
-                        // } on WeakPasswordAuthException {
-                        //   await showErrorDialog(
-                        //     context,
-                        //     'Weak Password',
-                        //   );
-                        // } on EmailAlreadyInUseAuthException {
-                        //   await showErrorDialog(
-                        //     context,
-                        //     'Email is already in use',
-                        //   );
-                        // } on InvalidEmailAuthException {
-                        //   await showErrorDialog(
-                        //     context,
-                        //     'Email is invalid',
-                        //   );
-                        // } on GenericAuthException {
-                        //   await showErrorDialog(
-                        //     context,
-                        //     'Failed To Register',
-                        //   );
-                        // }
-                        // // catch (e){
-                        // //   await showErrorDialog(context, e.toString(),);
-                        // // }
-
-                      },
-                      //child: const Text('Register'),
-                      child: Text(
-                          context.loc.register,
-                      ),
-                    ),
-
-                    TextButton(
-                      onPressed: () {
-
-                        context.read<AuthBloc>().add(
-                          const AuthEventLogOut(),
-                        );
-
-                        // Navigator.of(context).pushNamedAndRemoveUntil(
-                        //   loginRoute,
-                        //   (route) => false,
-                        // );
-
-                      },
-                      //child: const Text('Already registered? Login here!')
-                      child: Text(
-                          context.loc.register_view_already_registered,
-                      ),
-                    )
-
-                  ],
-                  
+          
+                          // Navigator.of(context).pushNamedAndRemoveUntil(
+                          //   loginRoute,
+                          //   (route) => false,
+                          // );
+          
+                        },
+                        //child: const Text('Already registered? Login here!')
+                        child: Text(
+                            context.loc.register_view_already_registered,
+                        ),
+                      )
+          
+                    ],
+                    
+                  ),
                 ),
-              ),
-              
-            ],
+                
+              ],
+            ),
           ),
         ),
       ),
