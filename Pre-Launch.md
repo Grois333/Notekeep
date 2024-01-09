@@ -1,4 +1,4 @@
-# Pre-launch Android Deploy todo list:
+# Pre-launch Android Deploy Todo List:
 
 - Follow the steps in Google Play console
 
