@@ -1,6 +1,48 @@
 # Notekeep
 
-A new Flutter project.
+"NoteKeep: Your sleek, cloud-powered notes app for easy creation, storage, and sharing."
+
+
+### Icon:
+
+![Icon](https://raw.githubusercontent.com/Grois333/Notekeep/master/image-assets/icon.png)
+
+
+### Featured Graphic:
+
+![Featured Graphic](https://raw.githubusercontent.com/Grois333/Notekeep/master/image-assets/Featured%20Graphic.jpg)
+
+
+### Splash Screen:
+
+![splash screen](https://raw.githubusercontent.com/Grois333/Notekeep/master/image-assets/splash%20screen.png)
+
+
+### Login:
+
+![Login](https://raw.githubusercontent.com/Grois333/Notekeep/master/image-assets/screenshots/file1.png)
+
+
+### Forgot Password:
+
+![Forgot Password](https://raw.githubusercontent.com/Grois333/Notekeep/master/image-assets/screenshots/file2.png)
+
+
+### Register:
+
+![Register](https://raw.githubusercontent.com/Grois333/Notekeep/master/image-assets/screenshots/file3.png)
+
+
+### Notes:
+
+![Notes](https://raw.githubusercontent.com/Grois333/Notekeep/master/image-assets/screenshots/file4.png)
+
+
+### Edit Note:
+
+![Edit Note](https://raw.githubusercontent.com/Grois333/Notekeep/master/image-assets/screenshots/file5.png)
+
+
 
 ## Getting Started
 
