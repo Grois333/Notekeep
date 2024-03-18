@@ -29,7 +29,7 @@ void main() {
     MaterialApp(
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      title: 'Flutter Demo',
+      title: 'NoteKeep',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
